@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".test.MainActivity">
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/mv"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="你好，沉浸式状态栏运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。"/>
+
+
+    </LinearLayout>
+</ScrollView>
