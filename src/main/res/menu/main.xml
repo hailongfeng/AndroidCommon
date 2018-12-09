@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_friend"
+        android:orderInCategory="60"
+        android:title="添加"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_add_channel"
+        android:orderInCategory="60"
+        android:title="频道"
+        app:showAsAction="always" />
+    <!--<item-->
+    <!--android:id="@+id/menu_help"-->
+    <!--android:orderInCategory="60"-->
+    <!--android:title="帮助与反馈"-->
+    <!--app:showAsAction="never" />-->
+    <!--<item-->
+    <!--android:id="@+id/menu_4"-->
+    <!--android:orderInCategory="60"-->
+    <!--android:title="我是第四个"-->
+    <!--app:showAsAction="never" />-->
+
+</menu>

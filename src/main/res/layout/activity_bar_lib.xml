@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".test.BarLibActivity"
+    android:orientation="vertical">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mv" />
+            <TextView
+                android:layout_width="match_parent"
+                android:text="运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。compile 'com.daimajia.numberprogressbar:library:1.2@aar' compile 'de.green...原文:Gradle, the Applidium way 让我们继续谈论android生态中的GradleGradle是Andro..."
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:text="运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。compile 'com.daimajia.numberprogressbar:library:1.2@aar' compile 'de.green...原文:Gradle, the Applidium way 让我们继续谈论android生态中的GradleGradle是Andro..."
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:text="运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。运行App可以看到确实有效果，这样我们就可以得到开关描述的效果了（浅色主题下Toolbar使用深色背景，并且将标题、溢出图标及溢出菜单文字改为白色）。compile 'com.daimajia.numberprogressbar:library:1.2@aar' compile 'de.green...原文:Gradle, the Applidium way 让我们继续谈论android生态中的GradleGradle是Andro..."
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:title="图片状态栏 + 彩色导航栏"
+            app:titleTextColor="@android:color/white"/>
+    </LinearLayout>
+</FrameLayout>
+
+</LinearLayout>
