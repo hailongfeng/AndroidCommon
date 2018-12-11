@@ -9,4 +9,7 @@ import retrofit2.http.Path;
 public interface ApiService {
     @GET("users/{username}")
     Observable<User> getUser(@Path("username") String username);
+
+    @GET("https://www.jianshu.com/p/0ad99e598dba")
+    Observable<String> getJianShu();
 }

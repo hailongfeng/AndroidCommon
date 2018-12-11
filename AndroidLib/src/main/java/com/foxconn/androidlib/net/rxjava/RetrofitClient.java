@@ -51,7 +51,7 @@ public class RetrofitClient {
             mOkHttpClient = new OkHttpClient.Builder()
                     .connectTimeout(10, TimeUnit.SECONDS)
                     .readTimeout(10, TimeUnit.SECONDS)
-                    .addInterceptor(addQueryParameterInterceptor)  //公共参数的封装
+//                    .addInterceptor(addQueryParameterInterceptor)  //公共参数的封装
                     .cookieJar(new CookieJarImpl(mContext)) //cookie 保存方案
                     .build();
         }
@@ -82,7 +82,7 @@ public class RetrofitClient {
 
         if (mRetrofit == null) {
             mRetrofit = new Retrofit.Builder()
-                    .baseUrl("")
+                    .baseUrl("https://www.jianshu.com/")
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //RxJava2 的CallAdapter
                     .addConverterFactory(FastJsonConverterFactory.create())       // FastJsonConvertFactory
                     .client(provideOkHttpClient()).build();
@@ -95,12 +95,6 @@ public class RetrofitClient {
         if (mApiService == null) {
             mApiService = provideRetrofit().create(ApiService.class);
         }
-        execute(mApiService.getUser(""), new Consumer<User>() {
-            @Override
-            public void accept(User user) throws Exception {
-
-            }
-        });
         return mApiService;
     }
     public static <T> T execute(Observable<T> observable , Consumer<T> subscriber) {

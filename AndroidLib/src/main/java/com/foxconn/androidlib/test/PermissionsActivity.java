@@ -28,7 +28,7 @@ public class PermissionsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE };
+        String[] perms = {Manifest.permission.INTERNET };
         if (EasyPermissions.hasPermissions(this, perms)) {
 //            accessNet();
             LogUtil.d(TAG,"已获取权限");
