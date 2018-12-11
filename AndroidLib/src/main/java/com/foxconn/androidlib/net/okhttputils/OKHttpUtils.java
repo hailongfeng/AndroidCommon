@@ -68,54 +68,21 @@ public class OKHttpUtils{
         }else{
             clientBuilder.cache(new Cache(context.getCacheDir(),maxCacheSize));
         }
-//        Interceptor cacheInterceptor = new Interceptor() {
-//            @Override public Response intercept(Chain chain) throws IOException {
-//                Response originalResponse = chain.proceed(chain.request());
-//                return originalResponse.newBuilder()
-//                        .removeHeader("Pragma")
-//                        .header("Cache-Control", String.format("max-age=%d", maxCacheAge))
-//                        .build();
-//            }
-//        };
         if(isGzip){
             if(!clientBuilder.interceptors().contains(gzipRequestInterceptor)){
                 clientBuilder.addInterceptor(new GzipRequestInterceptor());
             }
         }
-//        clientBuilder.addNetworkInterceptor(cacheInterceptor);
         if(netWorkinterceptors!=null && !netWorkinterceptors.isEmpty()){
             clientBuilder.networkInterceptors().addAll(netWorkinterceptors);
         }
         if(interceptors!=null && !interceptors.isEmpty()){
             clientBuilder.interceptors().addAll(interceptors);
         }
-        clientBuilder.addNetworkInterceptor(interceptor);
         clientBuilder.readTimeout(timeOut, TimeUnit.SECONDS);
         clientBuilder.connectTimeout(timeOut, TimeUnit.SECONDS);
         client = clientBuilder.build();
     }
-
-
-
-    /**
-     * 如果服务器不支持缓存就可能没有指定这个头部，这种情况下我们就需要使用Interceptor来重写Respose的头部信息，从而让okhttp支持缓存。
-     */
-    Interceptor interceptor = new Interceptor() {
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Request request = chain.request();
-            Response response = chain.proceed(request);
-
-            String cacheControl = request.cacheControl().toString();
-            if (TextUtils.isEmpty(cacheControl)) {
-                cacheControl = "public, max-age=60";
-            }
-            return response.newBuilder()
-                    .header("Cache-Control", cacheControl)
-                    .removeHeader("Pragma")
-                    .build();
-        }
-    };
 
     public OKHttpUtils initDefault(Context context){
         return  new Builder(context).build();

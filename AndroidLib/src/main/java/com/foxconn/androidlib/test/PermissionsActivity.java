@@ -1,22 +1,19 @@
 package com.foxconn.androidlib.test;
 
 import android.Manifest;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.foxconn.androidlib.R;
 import com.foxconn.androidlib.base.BaseActivity;
-import com.foxconn.androidlib.net.HttpCallback;
+import com.foxconn.androidlib.net.retrofit.HttpCallback;
 import com.foxconn.androidlib.test.http.RetrofitModel;
 import com.foxconn.androidlib.utils.LogUtil;
 
 import java.util.List;
 
 import butterknife.BindView;
-import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class PermissionsActivity extends BaseActivity {

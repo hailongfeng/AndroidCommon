@@ -1,4 +1,4 @@
-package com.foxconn.androidlib.net;
+package com.foxconn.androidlib.net.retrofit;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

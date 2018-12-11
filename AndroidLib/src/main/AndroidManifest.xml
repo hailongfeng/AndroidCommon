@@ -19,15 +19,18 @@
         <activity android:name=".test.MainActivity" />
         <activity android:name=".test.StatusActivity" />
         <activity android:name=".test.ScroollActivity" />
-        <activity android:name=".test.BarLibActivity"></activity>
+        <activity android:name=".test.BarLibActivity" />
         <activity android:name=".test.PermissionsActivity">
+
+        </activity>
+        <activity android:name=".test.OKhttpUtilsActivity" />
+        <activity android:name=".test.RxjavaActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".test.OKhttpUtilsActivity"></activity>
     </application>
 
 </manifest>
