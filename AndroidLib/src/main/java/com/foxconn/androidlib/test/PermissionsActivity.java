@@ -1,15 +1,21 @@
 package com.foxconn.androidlib.test;
 
 import android.Manifest;
+import android.content.Intent;
 import android.nfc.Tag;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.foxconn.androidlib.R;
 import com.foxconn.androidlib.base.BaseActivity;
 import com.foxconn.androidlib.net.HttpCallback;
+import com.foxconn.androidlib.service.GuardService;
+import com.foxconn.androidlib.service.JobWakeUpService;
+import com.foxconn.androidlib.service.StepService;
 import com.foxconn.androidlib.test.http.RetrofitModel;
 import com.foxconn.androidlib.utils.LogUtil;
 
@@ -41,6 +47,7 @@ public class PermissionsActivity extends BaseActivity {
                     1, perms);
 
         }
+
     }
 
     private void accessNet(){

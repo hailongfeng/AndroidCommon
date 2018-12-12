@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.foxconn.androidlib">
+    package="com.foxconn.androidlib"
+    android:installLocation="internalOnly">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    *
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    *
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- JobService权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BIND_JOB_SERVICE" />
 
     <application
         android:name=".base.BaseApplication"
@@ -19,15 +21,58 @@
         <activity android:name=".test.MainActivity" />
         <activity android:name=".test.StatusActivity" />
         <activity android:name=".test.ScroollActivity" />
-        <activity android:name=".test.BarLibActivity"></activity>
+        <activity android:name=".test.BarLibActivity" />
         <activity android:name=".test.PermissionsActivity">
+
+        </activity>
+        <activity android:name=".test.OKhttpUtilsActivity" />
+
+        <receiver android:name=".service.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.foxconn.androidlib.service.StepService"
+            android:exported="true"
+            android:process=":istep.service">
+            <intent-filter>
+                <action android:name="com.foxconn.androidlib.service.StepService"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.foxconn.androidlib.service.GuardService"
+            android:exported="true"
+            android:process=":GuardService">
+            <intent-filter>
+                <action android:name="com.foxconn.androidlib.service.GuardService"/>
+            </intent-filter>
+        </service>
+
+
+        <service
+            android:name="com.foxconn.androidlib.brodcast.ServiceOne"
+            android:exported="true"
+            android:process=":ServiceOne">
+        </service>
+        <service
+            android:name="com.foxconn.androidlib.brodcast.ServiceTwo"
+            android:exported="true"
+            android:process=":ServiceTwo">
+        </service>
+
+
+        <service android:name=".service.JobWakeUpService" />
+
+        <activity android:name=".test.ServiceTestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".test.OKhttpUtilsActivity"></activity>
     </application>
 
 </manifest>
