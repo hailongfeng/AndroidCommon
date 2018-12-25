@@ -1,29 +1,21 @@
 package com.foxconn.androidlib.test;
 
 import android.Manifest;
-import android.content.Intent;
-import android.nfc.Tag;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.foxconn.androidlib.R;
 import com.foxconn.androidlib.base.BaseActivity;
-import com.foxconn.androidlib.net.HttpCallback;
-import com.foxconn.androidlib.service.GuardService;
-import com.foxconn.androidlib.service.JobWakeUpService;
-import com.foxconn.androidlib.service.StepService;
+import com.foxconn.androidlib.net.retrofit.HttpCallback;
 import com.foxconn.androidlib.test.http.RetrofitModel;
 import com.foxconn.androidlib.utils.LogUtil;
 
 import java.util.List;
 
 import butterknife.BindView;
-import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
+
 
 public class PermissionsActivity extends BaseActivity {
 
@@ -37,13 +29,18 @@ public class PermissionsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE };
+        String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.BLUETOOTH,
+                Manifest.permission.CALL_PHONE
+
+        };
         if (EasyPermissions.hasPermissions(this, perms)) {
 //            accessNet();
             LogUtil.d(TAG,"已获取权限");
         } else {
             LogUtil.d(TAG,"没有权限，现在去获取");
-            EasyPermissions.requestPermissions(this, "申请内存权限",
+            EasyPermissions.requestPermissions(this, "申请4个权限",
                     1, perms);
 
         }
@@ -64,7 +61,7 @@ public class PermissionsActivity extends BaseActivity {
 
             @Override
             public void onFailure(String errorResponse) {
-                LogUtil.d(TAG,errorResponse);
+                log(errorResponse);
             }
         });
     }
@@ -76,28 +73,32 @@ public class PermissionsActivity extends BaseActivity {
     }
 
     EasyPermissions.PermissionCallbacks permissionCallbacks=new EasyPermissions.PermissionCallbacks(){
-
         @Override
         public void onRequestPermissionsResult(int i, @NonNull String[] strings, @NonNull int[] ints) {
-
+                    log("onRequestPermissionsResult");
+                    log(i+"");
+                    for (String s:strings){
+                        log(s);
+                    }
+                    for (int i1:ints){
+                        log(""+i1);
+                    }
         }
 
         @Override
         public void onPermissionsGranted(int requestCode, List<String> perms) {
-            switch (requestCode){
-                case 1:
-                    accessNet();
-                    toastLong("已获取网络权限和读写SD卡权限");
-                    break;
+            log("onPermissionsGranted");
+            for (String s:perms){
+                log(s);
             }
         }
 
         @Override
         public void onPermissionsDenied(int requestCode, List<String> perms) {
-//            if (EasyPermissions.somePermissionPermanentlyDenied(PermissionsActivity.this, perms)) {
-                toastLong("拒绝");
-////                new AppSettingsDialog.Builder(PermissionsActivity.this).build().show();
-//            }
+            log("onPermissionsDenied");
+             for (String s:perms){
+                log(s);
+            }
         }
     };
 

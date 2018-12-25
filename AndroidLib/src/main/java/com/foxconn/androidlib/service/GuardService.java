@@ -1,6 +1,5 @@
 package com.foxconn.androidlib.service;
 
-import android.app.Notification;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
@@ -40,7 +39,7 @@ public class GuardService extends Service {
     public void onCreate() {
         super.onCreate();
         LogUtil.d(TAG,"GuardService 创建:"+new Date().toLocaleString());
-        test1();
+        startStepService();
     }
 
     @Override
@@ -51,7 +50,7 @@ public class GuardService extends Service {
         return super.onStartCommand(intent,flags,startId);
     }
 
-    void test1(){
+    void startStepService(){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -76,7 +75,7 @@ public class GuardService extends Service {
         public void onServiceDisconnected(ComponentName componentName) {
             LogUtil.d(TAG,"GuardService 断开链接:"+new Date().toLocaleString());
             //断开链接
-            test1();
+            startStepService();
         }
     };
 

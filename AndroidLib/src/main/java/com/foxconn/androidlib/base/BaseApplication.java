@@ -5,11 +5,10 @@ import android.app.Application;
 import android.os.Bundle;
 
 import com.foxconn.androidlib.utils.LogUtil;
+import com.orhanobut.logger.Logger;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 
@@ -33,6 +32,7 @@ public class BaseApplication extends Application {
         map=new HashMap<>();
         activityLinkedList = new LinkedList<>();
         registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
+        Logger.init("LttAndroid");
     }
 
     public String getBaseUrl(){

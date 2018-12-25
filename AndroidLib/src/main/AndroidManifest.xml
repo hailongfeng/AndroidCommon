@@ -6,9 +6,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <!-- JobService权限 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BIND_JOB_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".base.BaseApplication"
@@ -22,9 +28,7 @@
         <activity android:name=".test.StatusActivity" />
         <activity android:name=".test.ScroollActivity" />
         <activity android:name=".test.BarLibActivity" />
-        <activity android:name=".test.PermissionsActivity">
-
-        </activity>
+        <activity android:name=".test.PermissionsActivity" />
         <activity android:name=".test.OKhttpUtilsActivity" />
 
         <receiver android:name=".service.BootCompleteReceiver">
@@ -34,44 +38,46 @@
         </receiver>
 
         <service
-            android:name="com.foxconn.androidlib.service.StepService"
+            android:name=".service.StepService"
             android:exported="true"
             android:process=":istep.service">
             <intent-filter>
-                <action android:name="com.foxconn.androidlib.service.StepService"/>
+                <action android:name="com.foxconn.androidlib.service.StepService" />
             </intent-filter>
         </service>
-
         <service
-            android:name="com.foxconn.androidlib.service.GuardService"
+            android:name=".service.GuardService"
             android:exported="true"
             android:process=":GuardService">
             <intent-filter>
-                <action android:name="com.foxconn.androidlib.service.GuardService"/>
+                <action android:name="com.foxconn.androidlib.service.GuardService" />
             </intent-filter>
         </service>
-
-
         <service
-            android:name="com.foxconn.androidlib.brodcast.ServiceOne"
+            android:name=".brodcast.ServiceOne"
             android:exported="true"
-            android:process=":ServiceOne">
-        </service>
+            android:process=":ServiceOne" />
         <service
-            android:name="com.foxconn.androidlib.brodcast.ServiceTwo"
+            android:name=".brodcast.ServiceTwo"
             android:exported="true"
-            android:process=":ServiceTwo">
-        </service>
-
-
+            android:process=":ServiceTwo" />
         <service android:name=".service.JobWakeUpService" />
+        <service android:name=".service.FrontService" />
 
-        <activity android:name=".test.ServiceTestActivity" >
+        <activity android:name=".test.ServiceTestActivity" />
+        <activity android:name=".test.RxjavaActivity" />
+        <activity android:name=".test.FloatingActionButtonActivity"></activity>
+        <activity android:name=".test.AudioActivity3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".test.BottomNavigationActivity"
+            android:label="@string/title_activity_bottom_navigation">
+
         </activity>
     </application>
 

@@ -24,7 +24,7 @@ public class DisplayUtil {
      */
     public static DisplayMetrics printDisplayInfo(Context context) {
         DisplayMetrics dm = getDisplayMetrics(context);
-        if (LogUtil.isPrint) {
+        if (LogUtil.isDebug) {
             StringBuilder sb = new StringBuilder();
             sb.append("_______  显示信息:  ");
             sb.append("\ndensity         :").append(dm.density);

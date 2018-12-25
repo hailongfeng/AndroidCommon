@@ -38,10 +38,10 @@ public class StepService extends Service {
     public void onCreate() {
         super.onCreate();
         LogUtil.d(TAG,"StepService 被创建:"+new Date().toLocaleString());
-        test1();
+        startGuardService();
     }
 
-    void test1(){
+    void startGuardService(){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -111,7 +111,7 @@ public class StepService extends Service {
             //断开链接
 
 //            startService(new Intent(StepService.this, GuardService.class));
-            test1();
+            startGuardService();
         }
     };
 

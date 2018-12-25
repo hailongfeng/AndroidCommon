@@ -36,7 +36,7 @@ public class BarLibActivity extends BaseActivity {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
                 float alpha=  (float) scrollY/320.0f;
-                LogUtil.d(TAG,scrollX+","+oldScrollX+","+scrollY+","+oldScrollY+",");
+                log(scrollX+","+oldScrollX+","+scrollY+","+oldScrollY+",");
                 if (alpha>1) alpha=1;
                 if (alpha<0) alpha=0;
                     ImmersionBar.with(BarLibActivity.this)

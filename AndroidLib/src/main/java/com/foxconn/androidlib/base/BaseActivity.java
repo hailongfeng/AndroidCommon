@@ -13,6 +13,7 @@ import com.foxconn.androidlib.utils.LogUtil;
 import com.foxconn.androidlib.utils.ToastUtils;
 import com.foxconn.androidlib.widget.LoadDialog;
 import com.gyf.barlibrary.ImmersionBar;
+import com.orhanobut.logger.Logger;
 
 import butterknife.ButterKnife;
 

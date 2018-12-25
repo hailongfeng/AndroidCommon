@@ -1,8 +1,8 @@
 package com.foxconn.androidlib.test.http;
 
-import com.foxconn.androidlib.net.HttpCallback;
-import com.foxconn.androidlib.net.RetrofitRequest;
-import com.foxconn.androidlib.net.RetrofitWrapper;
+import com.foxconn.androidlib.net.retrofit.HttpCallback;
+import com.foxconn.androidlib.net.retrofit.RetrofitRequest;
+import com.foxconn.androidlib.net.retrofit.RetrofitWrapper;
 
 import retrofit2.Call;
 

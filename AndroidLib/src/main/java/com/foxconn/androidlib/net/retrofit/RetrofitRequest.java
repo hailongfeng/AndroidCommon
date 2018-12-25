@@ -1,4 +1,4 @@
-package com.foxconn.androidlib.net;
+package com.foxconn.androidlib.net.retrofit;
 
 import java.io.IOException;
 

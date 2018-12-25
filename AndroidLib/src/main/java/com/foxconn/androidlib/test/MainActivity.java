@@ -1,11 +1,15 @@
 package com.foxconn.androidlib.test;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 
 import com.foxconn.androidlib.base.BaseActivity;
+import com.foxconn.androidlib.service.FrontService;
 import com.foxconn.androidlib.widget.LoadDialog;
 import com.gyf.barlibrary.ImmersionBar;
 import com.foxconn.androidlib.R;
@@ -47,24 +51,15 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    @Override
-    protected void initView() {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected boolean isUserButterKnife() {
-        return true;
-    }
 
     public void test1(View view) {
         LoadDialog.newInstance("加载中").show(getSupportFragmentManager(), "EditNameDialog");
 //        LoadDialog editNameDialog = new LoadDialog();
 //        editNameDialog.show(getSupportFragmentManager(), "EditNameDialog");
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void startService(View view) {
+        startForegroundService(new Intent(this, FrontService.class));
     }
 }

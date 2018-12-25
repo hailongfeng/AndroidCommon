@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="status_bar_height">0dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen tools:override="true" name="design_bottom_navigation_margin">5dp</dimen>
+    <!--BottomNavigationView 的选中没有选中的字体大小-->
+    <dimen tools:override="true" name="design_bottom_navigation_active_text_size">10sp</dimen>
+    <dimen tools:override="true" name="design_bottom_navigation_text_size">10sp</dimen>
 </resources>

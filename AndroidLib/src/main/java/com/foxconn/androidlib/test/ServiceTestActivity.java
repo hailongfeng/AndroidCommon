@@ -11,8 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.foxconn.androidlib.R;
-import com.foxconn.androidlib.base.BaseActivity;
-import com.foxconn.androidlib.service.StepService;
 import com.foxconn.androidlib.utils.LogUtil;
 import com.foxconn.androidlib.utils.ToastUtils;
 
