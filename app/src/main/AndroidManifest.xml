@@ -40,11 +40,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.foxconn.test.MainActivity">
-
-        </activity>
-        <activity android:name="com.foxconn.test.mediacodec.RenderActivity"></activity>
-        <activity android:name="com.foxconn.test.mediacodec2.AudioRecordHandleActivity">
+        <activity android:name="com.foxconn.test.videomediacodec.RenderActivity"></activity>
+        <activity android:name="com.foxconn.test.audiomediacodec.AudioRecordHandleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.foxconn.test.mediacodec2;
+package com.foxconn.test.audiomediacodec;
 
 /**
  * description ： ${todo}类的作用

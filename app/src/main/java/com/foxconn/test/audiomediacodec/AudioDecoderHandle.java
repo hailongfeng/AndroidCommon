@@ -1,4 +1,4 @@
-package com.foxconn.test.mediacodec2;
+package com.foxconn.test.audiomediacodec;
 
 import android.media.AudioAttributes;
 import android.media.AudioFormat;
@@ -178,6 +178,7 @@ public class AudioDecoderHandle {
 //先估算最小缓冲区大小
         int mBufferSizeInBytes = AudioRecord.getMinBufferSize(mSampleRateInHz, mChannelConfig, mAudioFormat);
 //创建AudioTrack
+
         mAudioTrack = new AudioTrack(
                 new AudioAttributes.Builder()
                         .setUsage(AudioAttributes.USAGE_MEDIA)
